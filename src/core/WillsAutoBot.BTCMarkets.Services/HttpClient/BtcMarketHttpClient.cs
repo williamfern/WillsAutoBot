@@ -17,82 +17,82 @@ namespace WillsAutoBot.BTCMarket.Services.HttpClient
         private readonly IHttpClientFactory _httpClientFactory;
         private readonly BtcMarketSettings _btcMarketSettings;
         private readonly ILogger<BtcMarketHttpClient> _logger;
-        
-        public BtcMarketHttpClient(IHttpClientFactory httpClientFactory,IOptions<BtcMarketSettings> btcMarketSettings, ILogger<BtcMarketHttpClient> logger)
+
+        public BtcMarketHttpClient(IHttpClientFactory httpClientFactory, IOptions<BtcMarketSettings> btcMarketSettings,
+            ILogger<BtcMarketHttpClient> logger)
         {
             _httpClientFactory = httpClientFactory.ThrowIfNullOrDefault(nameof(httpClientFactory));
             _btcMarketSettings = btcMarketSettings?.Value.ThrowIfNullOrDefault(nameof(btcMarketSettings));
             _logger = logger.ThrowIfNullOrDefault(nameof(logger));
         }
-        
+
         public async Task<ResponseModel> Get(string path, string queryString)
         {
-                var client = _httpClientFactory.CreateClient();
-                client.BaseAddress = new Uri(_btcMarketSettings.BaseUrl);
-                GenerateHeaders(client, "GET", null, path);
+            var client = _httpClientFactory.CreateClient();
+            client.BaseAddress = new Uri(_btcMarketSettings.BaseUrl);
+            GenerateHeaders(client, "GET", null, path);
 
-                var fullPath = !string.IsNullOrEmpty(queryString) ? path + "?" + queryString : path;
+            var fullPath = !string.IsNullOrEmpty(queryString) ? path + "?" + queryString : path;
 
-                var response = await client.GetAsync(fullPath);
-                if (!response.IsSuccessStatusCode)
-                    Console.WriteLine("Error: " + response.StatusCode.ToString());
+            var response = await client.GetAsync(fullPath);
+            if (!response.IsSuccessStatusCode)
+                Console.WriteLine("Error: " + response.StatusCode.ToString());
 
-                var content = await response.Content.ReadAsStringAsync();
-                return new ResponseModel
-                {
-                    Headers = response.Headers,
-                    Content = await response.Content.ReadAsStringAsync()
-                };
+            var content = await response.Content.ReadAsStringAsync();
+            return new ResponseModel
+            {
+                Headers = response.Headers,
+                Content = await response.Content.ReadAsStringAsync()
+            };
         }
 
         public async Task<string> Post(string path, string queryString, object data)
         {
-                var client = _httpClientFactory.CreateClient();
-                client.BaseAddress = new Uri(_btcMarketSettings.BaseUrl);
-                var stringifiedData = data != null ? JsonConvert.SerializeObject(data) : null;
-                GenerateHeaders(client, "POST", stringifiedData, path);
+            var client = _httpClientFactory.CreateClient();
+            client.BaseAddress = new Uri(_btcMarketSettings.BaseUrl);
+            var stringifiedData = data != null ? JsonConvert.SerializeObject(data) : null;
+            GenerateHeaders(client, "POST", stringifiedData, path);
 
-                var fullPath = !string.IsNullOrEmpty(queryString) ? path + "?" + queryString : path;
-                var content = new StringContent(stringifiedData, Encoding.UTF8, "application/json");
+            var fullPath = !string.IsNullOrEmpty(queryString) ? path + "?" + queryString : path;
+            var content = new StringContent(stringifiedData, Encoding.UTF8, "application/json");
 
-                var response = await client.PostAsync(fullPath, content);
-                if (!response.IsSuccessStatusCode)
-                    Console.WriteLine("Error: " + response.StatusCode.ToString());
+            var response = await client.PostAsync(fullPath, content);
+            if (!response.IsSuccessStatusCode)
+                Console.WriteLine("Error: " + response.StatusCode.ToString());
 
-                return await response.Content.ReadAsStringAsync();
-            
+            return await response.Content.ReadAsStringAsync();
         }
 
         public async Task<string> Put(string path, string queryString, object data)
         {
-                var client = _httpClientFactory.CreateClient();
-                client.BaseAddress = new Uri(_btcMarketSettings.BaseUrl);   
-                var stringifiedData = data != null ? JsonConvert.SerializeObject(data) : null;
-                GenerateHeaders(client, "PUT", stringifiedData, path);
+            var client = _httpClientFactory.CreateClient();
+            client.BaseAddress = new Uri(_btcMarketSettings.BaseUrl);
+            var stringifiedData = data != null ? JsonConvert.SerializeObject(data) : null;
+            GenerateHeaders(client, "PUT", stringifiedData, path);
 
-                var fullPath = !string.IsNullOrEmpty(queryString) ? path + "?" + queryString : path;
-                var content = new StringContent(stringifiedData, Encoding.UTF8, "application/json");
+            var fullPath = !string.IsNullOrEmpty(queryString) ? path + "?" + queryString : path;
+            var content = new StringContent(stringifiedData, Encoding.UTF8, "application/json");
 
-                var response = await client.PutAsync(fullPath, content);
-                if (!response.IsSuccessStatusCode)
-                    Console.WriteLine("Error: " + response.StatusCode.ToString());
+            var response = await client.PutAsync(fullPath, content);
+            if (!response.IsSuccessStatusCode)
+                Console.WriteLine("Error: " + response.StatusCode.ToString());
 
-                return await response.Content.ReadAsStringAsync();
+            return await response.Content.ReadAsStringAsync();
         }
 
         public async Task<string> Delete(string path, string queryString)
         {
-                var client = _httpClientFactory.CreateClient();
-                client.BaseAddress = new Uri(_btcMarketSettings.BaseUrl);
-                GenerateHeaders(client, "DELETE", null, path);
+            var client = _httpClientFactory.CreateClient();
+            client.BaseAddress = new Uri(_btcMarketSettings.BaseUrl);
+            GenerateHeaders(client, "DELETE", null, path);
 
-                var fullPath = !string.IsNullOrEmpty(queryString) ? path + "?" + queryString : path;
+            var fullPath = !string.IsNullOrEmpty(queryString) ? path + "?" + queryString : path;
 
-                var response = await client.DeleteAsync(fullPath);
-                if (!response.IsSuccessStatusCode)
-                    Console.WriteLine("Error: " + response.StatusCode.ToString());
+            var response = await client.DeleteAsync(fullPath);
+            if (!response.IsSuccessStatusCode)
+                Console.WriteLine("Error: " + response.StatusCode.ToString());
 
-                return await response.Content.ReadAsStringAsync();
+            return await response.Content.ReadAsStringAsync();
         }
 
 

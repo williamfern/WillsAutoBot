@@ -18,6 +18,5 @@ namespace WillsAutoBot.BTCMarket.Services.HttpClient
         Task<string> Put(string path, string queryString, object data);
 
         Task<string> Delete(string path, string queryString);
-
     }
 }

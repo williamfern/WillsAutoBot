@@ -8,7 +8,7 @@ namespace WillsAutoBot.Services.Models
         public string Buy { get; set; }
         public decimal SpotRate { get; set; }
         public string Market { get; set; }
-        public DateTime Timestamp { get; set; }
+        public DateTimeOffset Timestamp { get; set; }
         public string RateType { get; set; }
         public string RateSteps { get; set; }
     }

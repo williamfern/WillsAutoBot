@@ -9,6 +9,7 @@ namespace WillsAutoBot.WebApi.Config
         public ApiMapperProfile()
         {
             CreateMap<CoinApiModel, Coin>().ReverseMap();
+            CreateMap<PriceBaseApiModel, CoinPrice>().ReverseMap();
         }
     }
 }

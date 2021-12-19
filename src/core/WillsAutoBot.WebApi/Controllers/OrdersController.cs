@@ -13,6 +13,7 @@ namespace WillsAutoBot.WebApi.Controllers
     public class OrdersController : ControllerBase
     {
         private readonly IOrdersService _ordersService;
+
         //private readonly IMapper _mapper;
         private readonly ILogger<OrdersController> _logger;
 
@@ -21,8 +22,8 @@ namespace WillsAutoBot.WebApi.Controllers
             _logger = logger;
             _ordersService = ordersService.ThrowIfNullOrDefault(nameof(ordersService));
         }
-        
-        
+
+
         /// <summary>
         /// Gets and downloads the cloud template to setup an account for inclusion in TCS.
         /// </summary>
@@ -36,11 +37,10 @@ namespace WillsAutoBot.WebApi.Controllers
         [ProducesResponseType(typeof(Error[]), 404)]
         public async Task<ActionResult> GetAllOrders()
         {
-           // var result1 = await _ordersService.GetOrder("7346816281");
+            // var result1 = await _ordersService.GetOrder("7346816281");
             var result = await _ordersService.GetAllOrders();
 
             return Ok(result);
         }
-        
     }
 }

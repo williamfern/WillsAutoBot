@@ -67,9 +67,6 @@ namespace WillsAutoBot.Utilities.Helpers
             sb.Append("]");
             sb.Append("}");
             return sb.ToString();
-
         }
     }
-
-
 }

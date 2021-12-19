@@ -12,7 +12,5 @@ namespace WillsAutoBot.BTCMarket.Services.BTCMarketDayTrading
         Task<OrderResponse> GetOrderHistory(OrderRequest order);
         Task<Order> ListOrders(string marketId, string status);
         Task<string> GetTime();
-        
-        
     }
 }

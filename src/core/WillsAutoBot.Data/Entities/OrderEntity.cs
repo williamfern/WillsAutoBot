@@ -26,6 +26,7 @@ namespace WillsAutoBot.Data.Entities
                 SetPartitionAndRowKeys();
             }
         }
+
         public string Side { get; set; }
         public string Type { get; set; }
         public DateTime CreationTime { get; set; }

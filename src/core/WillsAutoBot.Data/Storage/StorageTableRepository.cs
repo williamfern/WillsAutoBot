@@ -90,20 +90,22 @@ namespace WillsAutoBot.Data.Storage
         protected async Task<IEnumerable<T>> GetAll(string partitionKey)
         {
             partitionKey.ThrowIfNullOrWhiteSpace($"{_tableName}:{nameof(partitionKey)}");
-            
+
             return await GetFiltered(partitionKey);
         }
 
-        protected async Task<(IEnumerable<T> results, string nextContinuationToken)> GetAll(string partitionKey, int pageSize, string continuationToken)
+        protected async Task<(IEnumerable<T> results, string nextContinuationToken)> GetAll(string partitionKey,
+            int pageSize, string continuationToken)
         {
             partitionKey.ThrowIfNullOrWhiteSpace($"{_tableName}:{nameof(partitionKey)}");
-            
+
             return await GetFiltered(partitionKey, pageSize, string.Empty, continuationToken);
         }
 
         protected async Task<IEnumerable<T>> GetPartitionKeyStartsWith(string startsWith)
         {
-            return await GetFiltered(string.Empty, GetPropertyStartsWithFilterString(PartitionKeyPropertyName, startsWith));
+            return await GetFiltered(string.Empty,
+                GetPropertyStartsWithFilterString(PartitionKeyPropertyName, startsWith));
         }
 
         protected async Task<IEnumerable<T>> GetFiltered(string partitionKey = "", string filterQuery = "")
@@ -117,7 +119,8 @@ namespace WillsAutoBot.Data.Storage
             if (!partitionKey.IsNullOrWhiteSpace())
             {
                 tableQuery =
-                    tableQuery.Where(TableQuery.GenerateFilterCondition(PartitionKeyPropertyName, QueryComparisons.Equal,
+                    tableQuery.Where(TableQuery.GenerateFilterCondition(PartitionKeyPropertyName,
+                        QueryComparisons.Equal,
                         partitionKey));
             }
 
@@ -150,7 +153,8 @@ namespace WillsAutoBot.Data.Storage
             return results;
         }
 
-        protected async Task<(IEnumerable<T> results, string nextContinuationToken)> GetFiltered(string partitionKey, int pageSize, string filterQuery = "",
+        protected async Task<(IEnumerable<T> results, string nextContinuationToken)> GetFiltered(string partitionKey,
+            int pageSize, string filterQuery = "",
             string continuationToken = null)
         {
             partitionKey.ThrowIfNullOrWhiteSpace($"{_tableName}:{nameof(partitionKey)}");
@@ -159,7 +163,8 @@ namespace WillsAutoBot.Data.Storage
             var table = await GetTable();
 
             //Query  
-            var tableQuery = new TableQuery<T>().Where(TableQuery.GenerateFilterCondition(PartitionKeyPropertyName, QueryComparisons.Equal, partitionKey));
+            var tableQuery = new TableQuery<T>().Where(
+                TableQuery.GenerateFilterCondition(PartitionKeyPropertyName, QueryComparisons.Equal, partitionKey));
 
             tableQuery.TakeCount = pageSize;
 
@@ -202,7 +207,8 @@ namespace WillsAutoBot.Data.Storage
         /// <param name="columns"></param>
         /// <param name="filter"></param>
         /// <returns>A task containing a list of dynamic table entities with the specified fields included.</returns>
-        private async Task<IList<DynamicTableEntity>> GetSelectedFields(string partitionKey, string[] columns, string filter = "")
+        private async Task<IList<DynamicTableEntity>> GetSelectedFields(string partitionKey, string[] columns,
+            string filter = "")
         {
             partitionKey.ThrowIfNullOrWhiteSpace($"{_tableName}:{nameof(partitionKey)}");
             columns.ThrowIfNullOrDefault($"{_tableName}:{nameof(columns)}");
@@ -210,11 +216,13 @@ namespace WillsAutoBot.Data.Storage
             //Table  
             var table = await GetTable();
 
-            var tableQuery = new TableQuery().Where(TableQuery.GenerateFilterCondition(PartitionKeyPropertyName, QueryComparisons.Equal, partitionKey));
+            var tableQuery = new TableQuery().Where(TableQuery.GenerateFilterCondition(PartitionKeyPropertyName,
+                QueryComparisons.Equal, partitionKey));
 
             if (!filter.IsNullOrWhiteSpace())
             {
-                var filterQuery = TableQuery.GenerateFilterCondition(RowKeyPropertyName, QueryComparisons.GreaterThanOrEqual, filter);
+                var filterQuery =
+                    TableQuery.GenerateFilterCondition(RowKeyPropertyName, QueryComparisons.GreaterThanOrEqual, filter);
 
                 tableQuery.FilterString = TableQuery.CombineFilters(
                     tableQuery.FilterString,
@@ -226,14 +234,13 @@ namespace WillsAutoBot.Data.Storage
 
             var results = new List<DynamicTableEntity>();
             TableContinuationToken continuationToken = null;
-            
+
             // Get All Results
             do
             {
                 var queryResults = await table.ExecuteQuerySegmentedAsync(tableQuery, continuationToken);
                 continuationToken = queryResults.ContinuationToken;
                 results.AddRange(queryResults.Results);
-
             } while (continuationToken != null);
 
             return results;
@@ -253,6 +260,7 @@ namespace WillsAutoBot.Data.Storage
                 {
                     errorMessage.AppendLine(validationResult.ErrorMessage);
                 }
+
                 throw new ArgumentException(errorMessage.ToString());
             }
 
@@ -282,6 +290,7 @@ namespace WillsAutoBot.Data.Storage
                 {
                     errorMessage.AppendLine(validationResult.ErrorMessage);
                 }
+
                 throw new ArgumentException(errorMessage.ToString());
             }
 
@@ -311,6 +320,7 @@ namespace WillsAutoBot.Data.Storage
                     {
                         errorMessage.AppendLine(validationResult.ErrorMessage);
                     }
+
                     throw new ArgumentException(errorMessage.ToString());
                 }
             }
@@ -332,6 +342,7 @@ namespace WillsAutoBot.Data.Storage
                     else
                         batch.Add(TableOperation.InsertOrReplace(row));
                 }
+
                 await table.ExecuteBatchAsync(batch);
 
                 rowOffset += rows.Count;
@@ -390,7 +401,6 @@ namespace WillsAutoBot.Data.Storage
                 TableQuery.GenerateFilterCondition(propertyName, QueryComparisons.GreaterThanOrEqual, startsWith),
                 TableOperators.And,
                 TableQuery.GenerateFilterCondition(propertyName, QueryComparisons.LessThan, partitionKeyStartsWithEnd));
-
         }
     }
 }

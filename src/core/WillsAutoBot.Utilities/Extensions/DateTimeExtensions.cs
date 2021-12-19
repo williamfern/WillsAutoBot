@@ -6,11 +6,14 @@ namespace WillsAutoBot.Utilities.Extensions
     {
         public static long GetReversedTicks(this DateTime dateTime) => DateTimeOffset.MaxValue.Ticks - dateTime.Ticks;
 
-        public static long GetReversedTicks(this DateTimeOffset dateTimeOffset) => DateTimeOffset.MaxValue.Ticks - dateTimeOffset.UtcTicks;
+        public static long GetReversedTicks(this DateTimeOffset dateTimeOffset) =>
+            DateTimeOffset.MaxValue.Ticks - dateTimeOffset.UtcTicks;
 
-        public static string GetReversedTicksAsPaddedString(this DateTime dateTime) => GetReversedTicks(dateTime).ToString().PadLeft(20, '0');
+        public static string GetReversedTicksAsPaddedString(this DateTime dateTime) =>
+            GetReversedTicks(dateTime).ToString().PadLeft(20, '0');
 
-        public static string GetReversedTicksAsPaddedString(this DateTimeOffset dateTimeOffset) => GetReversedTicks(dateTimeOffset).ToString().PadLeft(20, '0');
+        public static string GetReversedTicksAsPaddedString(this DateTimeOffset dateTimeOffset) =>
+            GetReversedTicks(dateTimeOffset).ToString().PadLeft(20, '0');
 
         private static readonly DateTime UnixEpoch = new DateTime(1970, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc);
 
@@ -50,6 +53,7 @@ namespace WillsAutoBot.Utilities.Extensions
         /// Get Australian eastern standard DateTime
         /// </summary>
         /// <returns></returns>
-        public static DateTimeOffset GetAusEasternStandardTime(this DateTime dateTime) => TimeZoneInfo.ConvertTime(dateTime, TimeZoneInfo.FindSystemTimeZoneById("AUS Eastern Standard Time"));     
+        public static DateTimeOffset GetAusEasternStandardTime(this DateTime dateTime) =>
+            TimeZoneInfo.ConvertTime(dateTime, TimeZoneInfo.FindSystemTimeZoneById("AUS Eastern Standard Time"));
     }
 }

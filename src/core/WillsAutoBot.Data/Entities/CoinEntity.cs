@@ -24,6 +24,7 @@
                 SetPartitionAndRowKeys();
             }
         }
+
         public bool IsDefault { get; set; }
 
         protected override void SetPartitionAndRowKeys()

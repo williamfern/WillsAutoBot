@@ -17,13 +17,13 @@ namespace WillsAutoBot.Crypto.Services
     {
         private readonly IBtcMarketHttpClient _btcMarketHttpClient;
         private readonly ILogger<IOrdersService> _logger;
-        
+
         public OrdersService(IBtcMarketHttpClient btcMarketHttpClient, ILogger<IOrdersService> logger)
         {
             _btcMarketHttpClient = btcMarketHttpClient.ThrowIfNullOrDefault(nameof(btcMarketHttpClient));
             _logger = logger.ThrowIfNullOrDefault(nameof(logger));
         }
-        
+
         public async Task<List<Order>> GetAllOrders()
         {
             var response = await _btcMarketHttpClient.Get("/v3/orders", "status=all&limit=200");

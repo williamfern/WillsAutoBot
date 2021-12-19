@@ -24,6 +24,7 @@
                 SetPartitionAndRowKeys();
             }
         }
+
         public string BestBid { get; set; }
         public string BestAsk { get; set; }
         public string LastPrice { get; set; }

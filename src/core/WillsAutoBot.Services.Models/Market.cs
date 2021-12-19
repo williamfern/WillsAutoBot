@@ -13,6 +13,5 @@ namespace WillsAutoBot.Services.Models
         public string Price24h { get; set; }
         public string Low24h { get; set; }
         public string High24h { get; set; }
-
     }
 }

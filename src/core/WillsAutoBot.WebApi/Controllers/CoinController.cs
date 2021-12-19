@@ -14,14 +14,16 @@ namespace WillsAutoBot.WebApi.Controllers
     public class CoinController : Controller
     {
         private readonly ICoinService _coinService;
+        private readonly IUserService _userService;
         private readonly IMapper _mapper;
-        
-        public CoinController(ICoinService coinService, IMapper mapper)
+
+        public CoinController(ICoinService coinService, IUserService userService, IMapper mapper)
         {
             _coinService = coinService.ThrowIfNullOrDefault(nameof(coinService));
+            _userService = userService.ThrowIfNullOrDefault(nameof(userService));
             _mapper = mapper.ThrowIfNullOrDefault(nameof(mapper));
         }
-        
+
         /// <summary>
         /// Supply a list of coins avaiable for the client
         /// </summary>
@@ -30,41 +32,37 @@ namespace WillsAutoBot.WebApi.Controllers
         [HttpGet]
         public async Task<ActionResult> GetAllCoins()
         {
-           return Ok(_mapper.Map<IEnumerable<CoinApiModel>>(await _coinService.GetCoinList()));
+            return Ok(_mapper.Map<IEnumerable<CoinApiModel>>(await _coinService.GetCoinList()));
         }
-        
-        
-        // /// <summary>
-        // /// Set user preference. Currently only accept the coin symbol
-        // /// </summary>
-        // /// <param name="userPref"></param>
-        // /// <returns></returns>
-        // [Route("SetUserPreferences")]
-        // [EnableCors("AllowEveryThing")]
-        // [HttpPost]
-        // public string SetUserPreferences([FromBody] UserPreference userPref)
-        // {
-        //     userPrefService.SetUserPreference(userPref);
-        //     var currentUserPref = userPrefService.GetUserPreference();
-        //
-        //     if (currentUserPref == null)
-        //         return "";
-        //
-        //     return userPrefService.GetUserPreference().PreferredCoin;
-        // }
-        //
-        //
-        // /// <summary>
-        // /// Retrieve current coin price details
-        // /// </summary>
-        // /// <returns></returns>
-        // [Route("EnquireCoinPriceDetails")]
-        // [EnableCors("AllowEveryThing")]
-        // [HttpGet]
-        // public async Task<PriceEnquiryResponse> EnquireCoinPriceDetails()
-        // {
-        //     return await priceService.GetCoinPriceDetails();
-        // }
 
+
+        /// <summary>
+        /// Set user preference. Currently only accept the coin symbol
+        /// </summary>
+        /// <param name="userPref"></param>
+        /// <returns></returns>
+        [Route("SetUserPreferences")]
+        [HttpPost]
+        public string SetUserPreferences([FromBody] UserPreference userPref)
+        {
+            _userService.WithUserPreference(userPref);
+            var currentUserPref = _userService.GetUserPreference();
+
+            if (currentUserPref == null)
+                return "";
+
+            return _userService.GetUserPreference().PreferredCoin;
+        }
+
+        /// <summary>
+        /// Retrieve current coin price details
+        /// </summary>
+        /// <returns></returns>
+        [Route("GetCoinPriceDetails")]
+        [HttpGet]
+        public async Task<ActionResult> GetCoinPriceDetails()
+        {
+            return Ok(_mapper.Map<PriceBaseApiModel>(await _coinService.GetCoinPriceList("BTC")));
+        }
     }
 }

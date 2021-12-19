@@ -6,7 +6,7 @@
         /// The secret
         /// </summary>
         public string ApiKey { get; set; }
-        
+
         /// <summary>
         /// The secret
         /// </summary>

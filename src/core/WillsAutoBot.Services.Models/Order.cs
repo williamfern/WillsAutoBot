@@ -13,6 +13,5 @@ namespace WillsAutoBot.Services.Models
         public string amount { get; set; }
         public string openAmount { get; set; }
         public string status { get; set; }
-  
     }
 }

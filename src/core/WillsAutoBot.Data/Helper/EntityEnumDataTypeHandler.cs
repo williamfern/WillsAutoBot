@@ -19,7 +19,8 @@ namespace WillsAutoBot.Data.Helper
                 .GetProperties()
                 .Where(x => x.GetCustomAttributes(typeof(EntityEnumDataTypeAttribute), false).Any())
                 .ToList()
-                .ForEach(x => results.Add(x.Name, new EntityProperty(x.GetValue(entity) != null ? x.GetValue(entity).ToString() : null)));
+                .ForEach(x => results.Add(x.Name,
+                    new EntityProperty(x.GetValue(entity) != null ? x.GetValue(entity).ToString() : null)));
         }
 
         public static void Deserialize<TEntity>(TEntity entity, IDictionary<string, EntityProperty> properties)

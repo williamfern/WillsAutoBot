@@ -7,7 +7,7 @@ namespace WillsAutoBot.Data.Helper
     /// and needs to be retrieved as class objects.
     /// </summary>
     [AttributeUsage(AttributeTargets.Property)]
-    internal class EntityJsonDataTypeAttribute: Attribute
+    internal class EntityJsonDataTypeAttribute : Attribute
     {
         public EntityJsonDataTypeAttribute()
         {

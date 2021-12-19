@@ -2,13 +2,7 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WillsAutoBot.BTCMarket.Services", "WillsAutoBot.BTCMarkets.Services\WillsAutoBot.BTCMarket.Services.csproj", "{0E85131E-0C1F-4040-BFB8-00E08B76CC92}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WillsAutoBot.Cointree.Services", "WillsAutoBot.Cointree.Services\WillsAutoBot.Cointree.Services.csproj", "{CB0C0884-4A0B-4722-9D02-DC97E2B6239B}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WillsAutoBot.Data", "WillsAutoBot.Data\WillsAutoBot.Data.csproj", "{AC62FEAE-9854-4467-A810-F9015CE5C2D0}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WillsAutoBot.Crypto.Function", "WillsAutoBot.Market\WillsAutoBot.Crypto.Function.csproj", "{E635676A-6C1C-4193-9EFD-00209CEB4580}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WillsAutoBot.Crypto.Services", "WillsAutoBot.Market.Services\WillsAutoBot.Crypto.Services.csproj", "{5507C999-4CAB-409A-BA55-72D1DCDCD79C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WillsAutoBot.Services.Models", "WillsAutoBot.Services.Models\WillsAutoBot.Services.Models.csproj", "{54F569AE-955E-4355-B202-218B02ED0C69}"
 EndProject
@@ -21,6 +15,16 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WillsAutoBot.Market.Function.Test", "test\WillsAutoBot.Market.Function.Test\WillsAutoBot.Market.Function.Test.csproj", "{B9AD8346-D25A-45C0-8CF9-333DA95BFFCF}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WillsAutoBot.Market.Services.Test", "test\WillsAutoBot.Market.Services.Test\WillsAutoBot.Market.Services.Test.csproj", "{311434CC-3099-48D7-996D-4F22D7D98CE2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WillsAutoBot.Crypto.Services", "WillsAutoBot.Market.Services\WillsAutoBot.Crypto.Services.csproj", "{BD76B94A-1269-4E18-8F47-CE1515730209}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WillsAutoBot.Settings", "WillsAutoBot.Settings\WillsAutoBot.Settings.csproj", "{10DFC343-DCB1-4988-83B3-000DB35AB95E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WillsAutoBot.Cointree.Services", "WillsAutoBot.Cointree.Services\WillsAutoBot.Cointree.Services.csproj", "{B72852BB-202C-4F8C-B454-C8768C412890}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WillsAutoBot.Core", "WillsAutoBot.Core\WillsAutoBot.Core.csproj", "{DD7453A2-5141-4536-A2DA-9C7D4CCA311B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WillsAutoBot.Crypto.Function", "WillsAutoBot.Crypto.Function\WillsAutoBot.Crypto.Function.csproj", "{716FC26E-03A3-4CE6-85FA-60D2CBBFB7A4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -40,14 +44,6 @@ Global
 		{AC62FEAE-9854-4467-A810-F9015CE5C2D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AC62FEAE-9854-4467-A810-F9015CE5C2D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AC62FEAE-9854-4467-A810-F9015CE5C2D0}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E635676A-6C1C-4193-9EFD-00209CEB4580}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E635676A-6C1C-4193-9EFD-00209CEB4580}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E635676A-6C1C-4193-9EFD-00209CEB4580}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E635676A-6C1C-4193-9EFD-00209CEB4580}.Release|Any CPU.Build.0 = Release|Any CPU
-		{5507C999-4CAB-409A-BA55-72D1DCDCD79C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5507C999-4CAB-409A-BA55-72D1DCDCD79C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5507C999-4CAB-409A-BA55-72D1DCDCD79C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5507C999-4CAB-409A-BA55-72D1DCDCD79C}.Release|Any CPU.Build.0 = Release|Any CPU
 		{54F569AE-955E-4355-B202-218B02ED0C69}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{54F569AE-955E-4355-B202-218B02ED0C69}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{54F569AE-955E-4355-B202-218B02ED0C69}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -68,6 +64,26 @@ Global
 		{311434CC-3099-48D7-996D-4F22D7D98CE2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{311434CC-3099-48D7-996D-4F22D7D98CE2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{311434CC-3099-48D7-996D-4F22D7D98CE2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BD76B94A-1269-4E18-8F47-CE1515730209}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD76B94A-1269-4E18-8F47-CE1515730209}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD76B94A-1269-4E18-8F47-CE1515730209}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD76B94A-1269-4E18-8F47-CE1515730209}.Release|Any CPU.Build.0 = Release|Any CPU
+		{10DFC343-DCB1-4988-83B3-000DB35AB95E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{10DFC343-DCB1-4988-83B3-000DB35AB95E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{10DFC343-DCB1-4988-83B3-000DB35AB95E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{10DFC343-DCB1-4988-83B3-000DB35AB95E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B72852BB-202C-4F8C-B454-C8768C412890}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B72852BB-202C-4F8C-B454-C8768C412890}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B72852BB-202C-4F8C-B454-C8768C412890}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B72852BB-202C-4F8C-B454-C8768C412890}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DD7453A2-5141-4536-A2DA-9C7D4CCA311B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD7453A2-5141-4536-A2DA-9C7D4CCA311B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD7453A2-5141-4536-A2DA-9C7D4CCA311B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DD7453A2-5141-4536-A2DA-9C7D4CCA311B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{716FC26E-03A3-4CE6-85FA-60D2CBBFB7A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{716FC26E-03A3-4CE6-85FA-60D2CBBFB7A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{716FC26E-03A3-4CE6-85FA-60D2CBBFB7A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{716FC26E-03A3-4CE6-85FA-60D2CBBFB7A4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{B9AD8346-D25A-45C0-8CF9-333DA95BFFCF} = {4D0C2A46-E18E-483A-9691-F765C2E6F9A7}

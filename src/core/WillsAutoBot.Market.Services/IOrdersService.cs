@@ -16,6 +16,5 @@ namespace WillsAutoBot.Crypto.Services
         /// </summary>
         /// <returns>A task containing an enumeration of accounts.</returns>
         Task<List<Order>> GetAllOrders();
-        
     }
 }

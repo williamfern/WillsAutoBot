@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk.Worker">
+
+    <PropertyGroup>
+        <TargetFramework>net5.0</TargetFramework>
+        <UserSecretsId>dotnet-WillsAutoBot.Core-EF92EA26-A79A-417A-AD69-2014C0F7EDDA</UserSecretsId>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="AutoMapper" Version="10.1.1"/>
+        <PackageReference Include="Microsoft.Extensions.Hosting" Version="5.0.0"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\WillsAutoBot.Data\WillsAutoBot.Data.csproj"/>
+        <ProjectReference Include="..\WillsAutoBot.Services.Models\WillsAutoBot.Services.Models.csproj"/>
+    </ItemGroup>
+</Project>

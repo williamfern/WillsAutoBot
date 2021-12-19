@@ -19,5 +19,3 @@ namespace WillsAutoBot.BTCMarket.Services.BTCMarketDayTrading.Models
         public List<Trade> trades { get; set; }
     }
 }
-
-

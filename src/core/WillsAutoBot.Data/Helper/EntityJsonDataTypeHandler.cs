@@ -27,7 +27,10 @@ namespace WillsAutoBot.Data.Helper
                 .GetProperties()
                 .Where(x => x.GetCustomAttributes(typeof(EntityJsonDataTypeAttribute), false).Count() > 0)
                 .ToList()
-                .ForEach(x => x.SetValue(entity, properties.TryGetValue(x.Name, out var property) ? JsonConvert.DeserializeObject(property.StringValue, x.PropertyType) : null));
+                .ForEach(x => x.SetValue(entity,
+                    properties.TryGetValue(x.Name, out var property)
+                        ? JsonConvert.DeserializeObject(property.StringValue, x.PropertyType)
+                        : null));
         }
     }
 }

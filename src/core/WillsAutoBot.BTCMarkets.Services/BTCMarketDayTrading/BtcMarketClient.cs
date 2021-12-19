@@ -25,12 +25,13 @@ namespace WillsAutoBot.BTCMarket.Services.BTCMarketDayTrading
             this.client = client;
             _options = options;
         }
+
         public async Task<TradingFee> GetTradingFee()
         {
             var endpoint = "/account/BTC/AUD/tradingfee";
             string signature = CreateSignature(endpoint);
             client.DefaultRequestHeaders.Add("signature", signature);
-            var response =  await client.GetAsync(endpoint);
+            var response = await client.GetAsync(endpoint);
             var content = await response.Content.ReadAsAsync<TradingFee>();
             return content;
         }
@@ -61,11 +62,11 @@ namespace WillsAutoBot.BTCMarket.Services.BTCMarketDayTrading
             var jsonString = JsonConvert.SerializeObject(order);
             string signature = CreateSignaturePost(endpoint, jsonString);
             client.DefaultRequestHeaders.Add("signature", signature);
-            var response = await client.PostAsync<OrderRequest>(endpoint, order,new JsonMediaTypeFormatter());
+            var response = await client.PostAsync<OrderRequest>(endpoint, order, new JsonMediaTypeFormatter());
             var content = await response.Content.ReadFromJsonAsync<OrderResponse>();
             return content;
         }
-        
+
         public async Task<Order> ListOrders(string marketId, string status)
         {
             var endpoint = $"/v3/orders";
@@ -75,7 +76,7 @@ namespace WillsAutoBot.BTCMarket.Services.BTCMarketDayTrading
             var content = await response.Content.ReadFromJsonAsync<Order>();
             return content;
         }
-        
+
         public async Task<string> GetTime()
         {
             var endpoint = $"/v3/time";
@@ -85,7 +86,7 @@ namespace WillsAutoBot.BTCMarket.Services.BTCMarketDayTrading
             var content = await response.Content.ReadFromJsonAsync<TimeResponse>();
             return content?.Timestamp;
         }
-        
+
         private string CreateSignature(string endpoint)
         {
             var data = $"{endpoint}\n{client.DefaultRequestHeaders.GetValues("timestamp").First()}\n";
@@ -96,7 +97,7 @@ namespace WillsAutoBot.BTCMarket.Services.BTCMarketDayTrading
             }
         }
 
-        private string CreateSignaturePost(string endpoint,string content)
+        private string CreateSignaturePost(string endpoint, string content)
         {
             var data = $"{endpoint}\n{client.DefaultRequestHeaders.GetValues("timestamp").First()}\n{content}";
             Console.WriteLine(data);

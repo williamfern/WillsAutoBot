@@ -7,5 +7,9 @@ namespace WillsAutoBot.Crypto.Services
     public interface ICoinService
     {
         public Task<List<Coin>> GetCoinList();
+
+        public Task<CoinPrice> GetCoinPriceList(string coinName);
+
+        public Task ProcessCoinPriceList();
     }
 }

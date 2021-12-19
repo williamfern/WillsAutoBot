@@ -103,7 +103,8 @@ namespace WillsAutoBot.Utilities.Extensions
         {
             value.ThrowIfNullOrWhiteSpace();
 
-            return !comparer.IsNullOrWhiteSpace() && value.StartsWith(comparer, StringComparison.CurrentCultureIgnoreCase);
+            return !comparer.IsNullOrWhiteSpace() &&
+                   value.StartsWith(comparer, StringComparison.CurrentCultureIgnoreCase);
         }
 
         /// <summary>
@@ -116,14 +117,16 @@ namespace WillsAutoBot.Utilities.Extensions
         {
             value.ThrowIfNullOrWhiteSpace();
 
-            return !comparer.IsNullOrWhiteSpace() && value.EndsWith(comparer, StringComparison.CurrentCultureIgnoreCase);
+            return !comparer.IsNullOrWhiteSpace() &&
+                   value.EndsWith(comparer, StringComparison.CurrentCultureIgnoreCase);
         }
 
         public static string ToSafeResourceIdString(this string resourceId) => resourceId.Replace('/', '=');
 
         public static string ToSafeScopeString(this string scope) => scope.Replace('/', '=');
 
-        public static string ToSafeKeyHashString(this string keyHash) => keyHash.Replace('/', '=').Replace('\\', '=').Replace('#', '=').Replace('?', '=');
+        public static string ToSafeKeyHashString(this string keyHash) =>
+            keyHash.Replace('/', '=').Replace('\\', '=').Replace('#', '=').Replace('?', '=');
 
         public static string ToSafeServiceString(this string service) => service.Replace('/', '=');
 
@@ -131,8 +134,12 @@ namespace WillsAutoBot.Utilities.Extensions
 
         public static string ToSafeTimeString(this string time) => time.Replace('/', '=');
 
-        public static string ToSafeNameString(this string name) => name.Replace("'", string.Empty).Replace(",", string.Empty).Replace("&", string.Empty).Replace(' ', '_');
-        public static string ToSafeCompanyName(this string companyName) => companyName.Replace("'", string.Empty).Replace("\"", string.Empty).Replace("&", string.Empty).Trim();
+        public static string ToSafeNameString(this string name) => name.Replace("'", string.Empty)
+            .Replace(",", string.Empty).Replace("&", string.Empty).Replace(' ', '_');
+
+        public static string ToSafeCompanyName(this string companyName) => companyName.Replace("'", string.Empty)
+            .Replace("\"", string.Empty).Replace("&", string.Empty).Trim();
+
         public static string RemoveWhitespaces(this string input) => input.Replace(" ", string.Empty);
         public static string ToSafeEmailString(this string email) => email.RemoveWhitespaces().ToLower();
 

@@ -26,7 +26,7 @@ namespace WillsAutoBot.Data.Entities
                 SetPartitionAndRowKeys();
             }
         }
-        
+
         public string Sell { get; set; }
         public string Buy { get; set; }
         public decimal SpotRate { get; set; }

@@ -21,7 +21,8 @@ namespace WillsAutoBot.Data.Entities
         protected abstract void SetPartitionAndRowKeys();
 
         /// <inheritdoc />
-        public override void ReadEntity(IDictionary<string, EntityProperty> properties, OperationContext operationContext)
+        public override void ReadEntity(IDictionary<string, EntityProperty> properties,
+            OperationContext operationContext)
         {
             base.ReadEntity(properties, operationContext);
 

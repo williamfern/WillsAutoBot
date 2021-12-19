@@ -10,4 +10,3 @@
         public long fee { get; set; }
     }
 }
-
