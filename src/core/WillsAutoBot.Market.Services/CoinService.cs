@@ -56,8 +56,6 @@ namespace WillsAutoBot.Crypto.Services
             {
                 var coinPrice = await GetCoinPriceList(coin.CoinName);
             }
-
-            throw new System.NotImplementedException();
         }
     }
 }

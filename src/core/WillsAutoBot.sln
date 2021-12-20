@@ -1,30 +1,35 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WillsAutoBot.BTCMarket.Services", "WillsAutoBot.BTCMarkets.Services\WillsAutoBot.BTCMarket.Services.csproj", "{0E85131E-0C1F-4040-BFB8-00E08B76CC92}"
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31205.134
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WillsAutoBot.BTCMarket.Services", "WillsAutoBot.BTCMarkets.Services\WillsAutoBot.BTCMarket.Services.csproj", "{0E85131E-0C1F-4040-BFB8-00E08B76CC92}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WillsAutoBot.Data", "WillsAutoBot.Data\WillsAutoBot.Data.csproj", "{AC62FEAE-9854-4467-A810-F9015CE5C2D0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WillsAutoBot.Data", "WillsAutoBot.Data\WillsAutoBot.Data.csproj", "{AC62FEAE-9854-4467-A810-F9015CE5C2D0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WillsAutoBot.Services.Models", "WillsAutoBot.Services.Models\WillsAutoBot.Services.Models.csproj", "{54F569AE-955E-4355-B202-218B02ED0C69}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WillsAutoBot.Services.Models", "WillsAutoBot.Services.Models\WillsAutoBot.Services.Models.csproj", "{54F569AE-955E-4355-B202-218B02ED0C69}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WillsAutoBot.Utilities", "WillsAutoBot.Utilities\WillsAutoBot.Utilities.csproj", "{C40A2230-0140-49A8-9CF0-AFBA279CE606}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WillsAutoBot.Utilities", "WillsAutoBot.Utilities\WillsAutoBot.Utilities.csproj", "{C40A2230-0140-49A8-9CF0-AFBA279CE606}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WillsAutoBot.WebApi", "WillsAutoBot.WebApi\WillsAutoBot.WebApi.csproj", "{00CCE11D-173E-4686-8E46-B70319C99D00}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WillsAutoBot.WebApi", "WillsAutoBot.WebApi\WillsAutoBot.WebApi.csproj", "{00CCE11D-173E-4686-8E46-B70319C99D00}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{4D0C2A46-E18E-483A-9691-F765C2E6F9A7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WillsAutoBot.Market.Function.Test", "test\WillsAutoBot.Market.Function.Test\WillsAutoBot.Market.Function.Test.csproj", "{B9AD8346-D25A-45C0-8CF9-333DA95BFFCF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WillsAutoBot.Market.Function.Test", "test\WillsAutoBot.Market.Function.Test\WillsAutoBot.Market.Function.Test.csproj", "{B9AD8346-D25A-45C0-8CF9-333DA95BFFCF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WillsAutoBot.Market.Services.Test", "test\WillsAutoBot.Market.Services.Test\WillsAutoBot.Market.Services.Test.csproj", "{311434CC-3099-48D7-996D-4F22D7D98CE2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WillsAutoBot.Market.Services.Test", "test\WillsAutoBot.Market.Services.Test\WillsAutoBot.Market.Services.Test.csproj", "{311434CC-3099-48D7-996D-4F22D7D98CE2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WillsAutoBot.Crypto.Services", "WillsAutoBot.Market.Services\WillsAutoBot.Crypto.Services.csproj", "{BD76B94A-1269-4E18-8F47-CE1515730209}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WillsAutoBot.Crypto.Services", "WillsAutoBot.Market.Services\WillsAutoBot.Crypto.Services.csproj", "{BD76B94A-1269-4E18-8F47-CE1515730209}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WillsAutoBot.Settings", "WillsAutoBot.Settings\WillsAutoBot.Settings.csproj", "{10DFC343-DCB1-4988-83B3-000DB35AB95E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WillsAutoBot.Settings", "WillsAutoBot.Settings\WillsAutoBot.Settings.csproj", "{10DFC343-DCB1-4988-83B3-000DB35AB95E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WillsAutoBot.Cointree.Services", "WillsAutoBot.Cointree.Services\WillsAutoBot.Cointree.Services.csproj", "{B72852BB-202C-4F8C-B454-C8768C412890}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WillsAutoBot.Cointree.Services", "WillsAutoBot.Cointree.Services\WillsAutoBot.Cointree.Services.csproj", "{B72852BB-202C-4F8C-B454-C8768C412890}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WillsAutoBot.Core", "WillsAutoBot.Core\WillsAutoBot.Core.csproj", "{DD7453A2-5141-4536-A2DA-9C7D4CCA311B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WillsAutoBot.Core", "WillsAutoBot.Core\WillsAutoBot.Core.csproj", "{DD7453A2-5141-4536-A2DA-9C7D4CCA311B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WillsAutoBot.Crypto.Function", "WillsAutoBot.Crypto.Function\WillsAutoBot.Crypto.Function.csproj", "{716FC26E-03A3-4CE6-85FA-60D2CBBFB7A4}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{5F429F7D-24C4-4D9F-AC9E-52AE5A095EBD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WillsAutoBot.Crypto.Function", "FunctionApp1\WillsAutoBot.Crypto.Function.csproj", "{1CFCD1A1-834A-41F9-9C34-87F9BA2B0A9F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -36,10 +41,6 @@ Global
 		{0E85131E-0C1F-4040-BFB8-00E08B76CC92}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0E85131E-0C1F-4040-BFB8-00E08B76CC92}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0E85131E-0C1F-4040-BFB8-00E08B76CC92}.Release|Any CPU.Build.0 = Release|Any CPU
-		{CB0C0884-4A0B-4722-9D02-DC97E2B6239B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{CB0C0884-4A0B-4722-9D02-DC97E2B6239B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{CB0C0884-4A0B-4722-9D02-DC97E2B6239B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{CB0C0884-4A0B-4722-9D02-DC97E2B6239B}.Release|Any CPU.Build.0 = Release|Any CPU
 		{AC62FEAE-9854-4467-A810-F9015CE5C2D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{AC62FEAE-9854-4467-A810-F9015CE5C2D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AC62FEAE-9854-4467-A810-F9015CE5C2D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -80,13 +81,29 @@ Global
 		{DD7453A2-5141-4536-A2DA-9C7D4CCA311B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DD7453A2-5141-4536-A2DA-9C7D4CCA311B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DD7453A2-5141-4536-A2DA-9C7D4CCA311B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{716FC26E-03A3-4CE6-85FA-60D2CBBFB7A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{716FC26E-03A3-4CE6-85FA-60D2CBBFB7A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{716FC26E-03A3-4CE6-85FA-60D2CBBFB7A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{716FC26E-03A3-4CE6-85FA-60D2CBBFB7A4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1CFCD1A1-834A-41F9-9C34-87F9BA2B0A9F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1CFCD1A1-834A-41F9-9C34-87F9BA2B0A9F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1CFCD1A1-834A-41F9-9C34-87F9BA2B0A9F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1CFCD1A1-834A-41F9-9C34-87F9BA2B0A9F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
+		{0E85131E-0C1F-4040-BFB8-00E08B76CC92} = {5F429F7D-24C4-4D9F-AC9E-52AE5A095EBD}
+		{AC62FEAE-9854-4467-A810-F9015CE5C2D0} = {5F429F7D-24C4-4D9F-AC9E-52AE5A095EBD}
+		{54F569AE-955E-4355-B202-218B02ED0C69} = {5F429F7D-24C4-4D9F-AC9E-52AE5A095EBD}
+		{C40A2230-0140-49A8-9CF0-AFBA279CE606} = {5F429F7D-24C4-4D9F-AC9E-52AE5A095EBD}
+		{00CCE11D-173E-4686-8E46-B70319C99D00} = {5F429F7D-24C4-4D9F-AC9E-52AE5A095EBD}
 		{B9AD8346-D25A-45C0-8CF9-333DA95BFFCF} = {4D0C2A46-E18E-483A-9691-F765C2E6F9A7}
 		{311434CC-3099-48D7-996D-4F22D7D98CE2} = {4D0C2A46-E18E-483A-9691-F765C2E6F9A7}
+		{BD76B94A-1269-4E18-8F47-CE1515730209} = {5F429F7D-24C4-4D9F-AC9E-52AE5A095EBD}
+		{10DFC343-DCB1-4988-83B3-000DB35AB95E} = {5F429F7D-24C4-4D9F-AC9E-52AE5A095EBD}
+		{B72852BB-202C-4F8C-B454-C8768C412890} = {5F429F7D-24C4-4D9F-AC9E-52AE5A095EBD}
+		{DD7453A2-5141-4536-A2DA-9C7D4CCA311B} = {5F429F7D-24C4-4D9F-AC9E-52AE5A095EBD}
+		{1CFCD1A1-834A-41F9-9C34-87F9BA2B0A9F} = {5F429F7D-24C4-4D9F-AC9E-52AE5A095EBD}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {65831636-675F-41A6-89F4-400191832C44}
 	EndGlobalSection
 EndGlobal

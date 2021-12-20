@@ -18,7 +18,8 @@ namespace WillsAutoBot.Crypto.Function
 
         [FunctionName(nameof(ProcessCoinPrice))]
         public async Task ProcessCoinPrice(
-            [Microsoft.Azure.Functions.Worker.TimerTrigger("0 0 * * * *", RunOnStartup = true)] TimerInfo timer,
+            [Microsoft.Azure.Functions.Worker.TimerTrigger("0 0 * * * *", RunOnStartup = true)]
+            TimerInfo timer,
             ILogger functionsLogger)
         {
             functionsLogger.LogInformation("Running coin price every hour..");
