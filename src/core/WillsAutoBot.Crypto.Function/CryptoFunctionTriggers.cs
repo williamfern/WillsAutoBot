@@ -3,7 +3,6 @@ using Microsoft.Azure.WebJobs;
 using Microsoft.Extensions.Logging;
 using WillsAutoBot.Crypto.Services;
 using WillsAutoBot.Utilities.Extensions;
-using TimerInfo = Microsoft.Azure.Functions.Worker.TimerInfo;
 
 namespace WillsAutoBot.Crypto.Function
 {
@@ -18,7 +17,7 @@ namespace WillsAutoBot.Crypto.Function
 
         [FunctionName(nameof(ProcessCoinPrice))]
         public async Task ProcessCoinPrice(
-            [Microsoft.Azure.Functions.Worker.TimerTrigger("0 0 * * * *", RunOnStartup = true)]
+            [TimerTrigger("0 * * * * *", RunOnStartup = true)]
             TimerInfo timer,
             ILogger functionsLogger)
         {

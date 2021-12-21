@@ -32,7 +32,7 @@ namespace WillsAutoBot.WebApi.Controllers
         [HttpGet]
         public async Task<ActionResult> GetAllCoins()
         {
-            return Ok(_mapper.Map<IEnumerable<CoinApiModel>>(await _coinService.GetCoinList()));
+            return Ok(_mapper.Map<IEnumerable<CoinApiModel>>(await _coinService.FindAllCoins()));
         }
 
 

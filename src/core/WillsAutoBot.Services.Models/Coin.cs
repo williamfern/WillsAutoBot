@@ -2,10 +2,8 @@
 
 namespace WillsAutoBot.Services.Models
 {
-    public class Coin
+    public class Coin : CoinBase
     {
-        public int Id { get; set; }
-        public string CoinName { get; set; }
         public bool IsDefault { get; set; }
     }
 }

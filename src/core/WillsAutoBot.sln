@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.31205.134
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32014.148
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WillsAutoBot.BTCMarket.Services", "WillsAutoBot.BTCMarkets.Services\WillsAutoBot.BTCMarket.Services.csproj", "{0E85131E-0C1F-4040-BFB8-00E08B76CC92}"
 EndProject
@@ -29,7 +29,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WillsAutoBot.Core", "WillsA
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{5F429F7D-24C4-4D9F-AC9E-52AE5A095EBD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WillsAutoBot.Crypto.Function", "FunctionApp1\WillsAutoBot.Crypto.Function.csproj", "{1CFCD1A1-834A-41F9-9C34-87F9BA2B0A9F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WillsAutoBot.Crypto.Function", "WillsAutoBot.Crypto.Function\WillsAutoBot.Crypto.Function.csproj", "{B53432A9-1733-4996-AE3A-CAE23416760C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_config", "_config", "{46BDE999-DE78-468A-AE77-CA675D4533FF}"
+	ProjectSection(SolutionItems) = preProject
+		_config\appsettings.shared.json = _config\appsettings.shared.json
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -81,10 +86,10 @@ Global
 		{DD7453A2-5141-4536-A2DA-9C7D4CCA311B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DD7453A2-5141-4536-A2DA-9C7D4CCA311B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DD7453A2-5141-4536-A2DA-9C7D4CCA311B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{1CFCD1A1-834A-41F9-9C34-87F9BA2B0A9F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1CFCD1A1-834A-41F9-9C34-87F9BA2B0A9F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1CFCD1A1-834A-41F9-9C34-87F9BA2B0A9F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1CFCD1A1-834A-41F9-9C34-87F9BA2B0A9F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B53432A9-1733-4996-AE3A-CAE23416760C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B53432A9-1733-4996-AE3A-CAE23416760C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B53432A9-1733-4996-AE3A-CAE23416760C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B53432A9-1733-4996-AE3A-CAE23416760C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -101,7 +106,7 @@ Global
 		{10DFC343-DCB1-4988-83B3-000DB35AB95E} = {5F429F7D-24C4-4D9F-AC9E-52AE5A095EBD}
 		{B72852BB-202C-4F8C-B454-C8768C412890} = {5F429F7D-24C4-4D9F-AC9E-52AE5A095EBD}
 		{DD7453A2-5141-4536-A2DA-9C7D4CCA311B} = {5F429F7D-24C4-4D9F-AC9E-52AE5A095EBD}
-		{1CFCD1A1-834A-41F9-9C34-87F9BA2B0A9F} = {5F429F7D-24C4-4D9F-AC9E-52AE5A095EBD}
+		{B53432A9-1733-4996-AE3A-CAE23416760C} = {5F429F7D-24C4-4D9F-AC9E-52AE5A095EBD}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {65831636-675F-41A6-89F4-400191832C44}

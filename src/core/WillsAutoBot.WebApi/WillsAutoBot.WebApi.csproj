@@ -1,20 +1,20 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
     <PropertyGroup>
-        <TargetFramework>net5.0</TargetFramework>
+        <TargetFramework>net6.0</TargetFramework>
         <RootNamespace>WillsAutoBot.WebApi</RootNamespace>
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="AutoMapper" Version="10.1.1"/>
-        <PackageReference Include="Microsoft.AspNetCore.Mvc.Abstractions" Version="2.2.0"/>
-        <PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.3"/>
+        <PackageReference Include="AutoMapper" Version="10.1.1" />
+        <PackageReference Include="Microsoft.AspNetCore.Mvc.Abstractions" Version="2.2.0" />
+        <PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.3" />
     </ItemGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\WillsAutoBot.Cointree.Services\WillsAutoBot.Cointree.Services.csproj"/>
-        <ProjectReference Include="..\WillsAutoBot.Data\WillsAutoBot.Data.csproj"/>
-        <ProjectReference Include="..\WillsAutoBot.Market.Services\WillsAutoBot.Crypto.Services.csproj"/>
+        <ProjectReference Include="..\WillsAutoBot.Cointree.Services\WillsAutoBot.Cointree.Services.csproj" />
+        <ProjectReference Include="..\WillsAutoBot.Data\WillsAutoBot.Data.csproj" />
+        <ProjectReference Include="..\WillsAutoBot.Market.Services\WillsAutoBot.Crypto.Services.csproj" />
     </ItemGroup>
 
 </Project>

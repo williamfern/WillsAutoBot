@@ -2,8 +2,7 @@
 {
     public class CoinBase
     {
-        public decimal Ask { get; set; }
-        public decimal Bid { get; set; }
-        public decimal Rate { get; set; }
+        public string CoinId { get; set; }
+        public string CoinName { get; set; }
     }
 }

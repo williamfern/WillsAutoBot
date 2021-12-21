@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.Options;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using WillsAutoBot.Data.Entities;
 using WillsAutoBot.Data.Storage;
@@ -6,22 +7,24 @@ using WillsAutoBot.Settings;
 
 namespace WillsAutoBot.Data.Repositories
 {
-    public class CoinPriceRepository : StorageTableRepository<CoinPriceEntity>, ICoinPriceRepository
+    public class CoinRepository : StorageTableRepository<CoinEntity>, ICoinRepository
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="CoinPriceRepository"/> class.
+        /// Initializes a new instance of the <see cref="CoinRepository"/> class.
         /// </summary>
         /// <param name="storageSettings">The Azure storage settings.</param>
         /// <param name="tableNameSettings">The Azure table name settings.</param>
-        public CoinPriceRepository(AzureStorageSettings storageSettings, IOptions<TableNameSettings> tableNameSettings)
-            : base(storageSettings.ConnectionString, tableNameSettings.Value.CoinPriceTableName)
+        public CoinRepository(AzureStorageSettings storageSettings, IOptions<TableNameSettings> tableNameSettings)
+            : base(storageSettings.ConnectionString, tableNameSettings.Value.CoinTableName)
         {
         }
 
-        public Task Add(CoinPriceEntity coin)
+        public Task Add(CoinEntity coin)
             => Insert(coin);
 
-        public Task AddOrUpdate(CoinPriceEntity coin)
+        public Task AddOrUpdate(CoinEntity coin)
             => InsertOrUpdate(coin);
+
+        public Task<IEnumerable<CoinEntity>> FindAll() => GetAll();
     }
 }

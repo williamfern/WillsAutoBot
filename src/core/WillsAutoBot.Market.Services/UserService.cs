@@ -37,7 +37,7 @@ namespace WillsAutoBot.Crypto.Services
             }
             else
             {
-                var coinList = await _coinService.GetCoinList();
+                var coinList = await _coinService.FindAllCoins();
                 var defaultCoin = coinList.FirstOrDefault(c => c.IsDefault);
 
                 return defaultCoin?.CoinName;

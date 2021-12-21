@@ -35,7 +35,7 @@
 
         protected override string GetPartitionKey()
         {
-            return CoinId;
+            return CoinName;
         }
     }
 }

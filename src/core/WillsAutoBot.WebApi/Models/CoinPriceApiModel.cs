@@ -4,6 +4,7 @@ namespace WillsAutoBot.WebApi.Models
 {
     public class CoinPriceApiModel : PriceBaseApiModel
     {
+        public int CoinId { get; set; }
         public string Sell { get; set; }
         public string Buy { get; set; }
         public decimal SpotRate { get; set; }

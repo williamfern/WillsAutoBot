@@ -1,9 +1,11 @@
 using System;
+using AutoMapper;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Serilog;
+using WillsAutoBot.Core.Mappers;
 using WillsAutoBot.Data.Storage;
 using WillsAutoBot.Settings;
+using WillsAutoBot.WebApi.Config;
 
 namespace WillsAutoBot.Core.Extensions
 {
@@ -26,17 +28,20 @@ namespace WillsAutoBot.Core.Extensions
 
             var configuration = new ConfigurationBuilder()
                 .SetBasePath(basePath)
+                .AddJsonFile("appsettings.shared.json", optional: false, reloadOnChange: true)
                 .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
                 .AddJsonFile("appsettings.Development.json", optional: true)
                 .AddJsonFile($"appsettings.{environmentName}.json", optional: true)
                 .AddEnvironmentVariables()
                 .Build();
 
-            services.AddSingleton(new AzureStorageSettings(configuration.GetValue<string>("CloudSightStorage")));
+            services.AddSingleton(new AzureStorageSettings(configuration.GetValue<string>("WillsAutoBotStorage")));
             
             services.Configure<TableNameSettings>(configuration.GetSection("TableNameSettings"));
             services.Configure<QueueNameSettings>(configuration.GetSection("QueueNameSettings"));
             services.Configure<BlobNameSettings>(configuration.GetSection("BlobNameSettings"));
+
+
             return configuration;
         }
         
@@ -44,6 +49,18 @@ namespace WillsAutoBot.Core.Extensions
         {
             return "Development".Equals(Environment.GetEnvironmentVariable("AZURE_FUNCTIONS_ENVIRONMENT"), StringComparison.OrdinalIgnoreCase);
         }
-        
+
+        public static void AddAutoMapper(this IServiceCollection services)
+        {
+
+            var config = new MapperConfiguration(cfg => {
+                cfg.AddProfile<CoinMapperProfile>(); 
+            });
+
+            var mapper = config.CreateMapper();
+            services.AddSingleton(mapper);
+            //services.AddScoped<IMapper, Mapper>();
+        }
+
     }
 }

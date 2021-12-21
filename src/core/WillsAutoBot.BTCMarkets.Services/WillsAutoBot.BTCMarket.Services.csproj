@@ -1,48 +1,23 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <TargetFramework>net5.0</TargetFramework>
+        <TargetFramework>net6.0</TargetFramework>
     </PropertyGroup>
 
     <ItemGroup>
-        <Folder Include="Models\"/>
+        <Folder Include="Models\" />
     </ItemGroup>
 
     <ItemGroup>
-        <PackageReference Include="Microsoft.AspNet.WebApi.Client" Version="5.2.4"/>
-        <PackageReference Include="Microsoft.Extensions.Http" Version="5.0.0"/>
-        <PackageReference Include="Newtonsoft.Json" Version="11.0.2"/>
+        <PackageReference Include="Microsoft.AspNet.WebApi.Client" Version="5.2.4" />
+        <PackageReference Include="Microsoft.Extensions.Http" Version="5.0.0" />
+        <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
     </ItemGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\WillsAutoBot.Services.Models\WillsAutoBot.Services.Models.csproj"/>
-        <ProjectReference Include="..\WillsAutoBot.Settings\WillsAutoBot.Settings.csproj"/>
-        <ProjectReference Include="..\WillsAutoBot.Utilities\WillsAutoBot.Utilities.csproj"/>
-    </ItemGroup>
-
-    <ItemGroup>
-        <Content Include="bin\Debug\net5.0\ref\WillsAutoBot.BTCMarket.Services.dll"/>
-        <Content Include="bin\Debug\net5.0\WillsAutoBot.BTCMarket.Services.deps.json"/>
-        <Content Include="bin\Debug\net5.0\WillsAutoBot.BTCMarket.Services.dll"/>
-        <Content Include="bin\Debug\net5.0\WillsAutoBot.BTCMarket.Services.pdb"/>
-        <Content Include="bin\Debug\net5.0\WillsAutoBot.Services.Models.dll"/>
-        <Content Include="bin\Debug\net5.0\WillsAutoBot.Services.Models.pdb"/>
-        <Content Include="bin\Debug\net5.0\WillsAutoBot.Settings.dll"/>
-        <Content Include="bin\Debug\net5.0\WillsAutoBot.Settings.pdb"/>
-        <Content Include="bin\Debug\net5.0\WillsAutoBot.Utilities.dll"/>
-        <Content Include="bin\Debug\net5.0\WillsAutoBot.Utilities.pdb"/>
-    </ItemGroup>
-
-    <ItemGroup>
-        <Compile Remove="bin\**"/>
-    </ItemGroup>
-
-    <ItemGroup>
-        <EmbeddedResource Remove="bin\**"/>
-    </ItemGroup>
-
-    <ItemGroup>
-        <None Remove="bin\**"/>
+        <ProjectReference Include="..\WillsAutoBot.Services.Models\WillsAutoBot.Services.Models.csproj" />
+        <ProjectReference Include="..\WillsAutoBot.Settings\WillsAutoBot.Settings.csproj" />
+        <ProjectReference Include="..\WillsAutoBot.Utilities\WillsAutoBot.Utilities.csproj" />
     </ItemGroup>
 
 </Project>
