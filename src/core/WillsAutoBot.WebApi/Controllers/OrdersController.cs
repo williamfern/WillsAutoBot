@@ -23,7 +23,6 @@ namespace WillsAutoBot.WebApi.Controllers
             _ordersService = ordersService.ThrowIfNullOrDefault(nameof(ordersService));
         }
 
-
         /// <summary>
         /// Gets and downloads the cloud template to setup an account for inclusion in TCS.
         /// </summary>

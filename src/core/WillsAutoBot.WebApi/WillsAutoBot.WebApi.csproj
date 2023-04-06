@@ -12,7 +12,6 @@
     </ItemGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\WillsAutoBot.Cointree.Services\WillsAutoBot.Cointree.Services.csproj" />
         <ProjectReference Include="..\WillsAutoBot.Data\WillsAutoBot.Data.csproj" />
         <ProjectReference Include="..\WillsAutoBot.Market.Services\WillsAutoBot.Crypto.Services.csproj" />
     </ItemGroup>

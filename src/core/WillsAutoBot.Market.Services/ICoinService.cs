@@ -13,7 +13,5 @@ namespace WillsAutoBot.Crypto.Services
         public Task<CoinPrice> GetCoinPriceList(string coinName);
 
         public Task ProcessCoinPriceList();
-
-
     }
 }

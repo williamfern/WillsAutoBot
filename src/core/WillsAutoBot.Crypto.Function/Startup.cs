@@ -1,6 +1,5 @@
 using Microsoft.Azure.Functions.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection;
-using WillsAutoBot.Cointree.Services.HttpClient;
 using WillsAutoBot.Core.Extensions;
 using WillsAutoBot.Crypto.Services;
 using WillsAutoBot.Data.Repositories;
@@ -33,9 +32,6 @@ namespace WillsAutoBot.Crypto.Function
 
             // Services
             builder.Services.AddScoped<ICoinService, CoinService>();
-
-            // clients
-            builder.Services.AddScoped<ICointreeHttpClient, CointreeHttpClient>();
         }
     }
 }

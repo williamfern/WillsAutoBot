@@ -1,13 +1,12 @@
-﻿using System;
-using System.Net.Http;
+﻿using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Options;
+using Microsoft.IdentityModel.Clients.ActiveDirectory;
+using System;
 using System.Text.Json;
 using System.Threading.Tasks;
-using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
+using WillsAutoBot.Cointree.Services.Models;
 using WillsAutoBot.Settings;
 using WillsAutoBot.Utilities.Extensions;
-using WillsAutoBot.Cointree.Services.Models;
-using WillsAutoBot.Services.Models;
 
 namespace WillsAutoBot.Cointree.Services.HttpClient
 {
@@ -27,7 +26,7 @@ namespace WillsAutoBot.Cointree.Services.HttpClient
 
         public async Task<CoinPriceResponse> GetCoinPrice(string coinName)
         {
-            var client = _httpClientFactory.CreateClient();
+            var client = _httpClientFactory.GetHttpClient();
             client.BaseAddress = new Uri(_cointreeSettings.BaseUrl);
 
             var response = await client.GetAsync(_cointreeSettings.BaseUrl + "api/prices/aud/" + coinName);

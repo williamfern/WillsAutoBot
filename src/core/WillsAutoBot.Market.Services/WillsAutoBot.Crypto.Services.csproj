@@ -10,7 +10,6 @@
 
     <ItemGroup>
         <ProjectReference Include="..\WillsAutoBot.BTCMarkets.Services\WillsAutoBot.BTCMarket.Services.csproj" />
-        <ProjectReference Include="..\WillsAutoBot.Cointree.Services\WillsAutoBot.Cointree.Services.csproj" />
         <ProjectReference Include="..\WillsAutoBot.Data\WillsAutoBot.Data.csproj" />
         <ProjectReference Include="..\WillsAutoBot.Services.Models\WillsAutoBot.Services.Models.csproj" />
     </ItemGroup>

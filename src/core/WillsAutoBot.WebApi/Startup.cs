@@ -1,4 +1,5 @@
 using System;
+using System.Net.Http.Headers;
 using AutoMapper;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -7,8 +8,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 using WillsAutoBot.BTCMarket.Services.HttpClient;
-using WillsAutoBot.Cointree.Services.HttpClient;
 using WillsAutoBot.Crypto.Services;
+using WillsAutoBot.Data.Repositories;
 using WillsAutoBot.Data.Repositories.Market;
 using WillsAutoBot.Data.Repositories.Order;
 using WillsAutoBot.Data.Storage;
@@ -43,26 +44,27 @@ namespace WillsAutoBot.WebApi
 
             // clients
             services.AddScoped<IBtcMarketHttpClient, BtcMarketHttpClient>();
-            services.AddScoped<ICointreeHttpClient, CointreeHttpClient>();
 
             // repos
             services.AddScoped<IOrderRepository, OrderRepository>();
             services.AddScoped<IMarketRepository, MarketRepository>();
-            // services.AddScoped<ICoinRepository, CoinRepository>();
+            services.AddScoped<ICoinRepository, CoinRepository>();
+            services.AddScoped<ICoinPriceRepository, CoinPriceRepository>();
+            
             // services
             services.AddScoped<IOrdersService, OrdersService>();
-            services.AddScoped<IUserService, UserService>();
+            // services.AddScoped<IUserService, UserService>();
             services.AddScoped<ICoinService, CoinService>();
-            //services.AddScoped<IMarketsService,IMarketsService>();
+            services.AddScoped<IMarketsService, MarketsService>();
 
 
             // services.AddHttpClient<IBtcMarketHttpClient, BtcMarketHttpClient>(x =>
             // {
-            //     x.BaseAddress = new Uri(baseUrl);
+            //     x.BaseAddress = new Uri("https://api.btcmarkets.net");
             //     x.DefaultRequestHeaders.Accept
             //         .Add(new MediaTypeWithQualityHeaderValue("application/json"));
             //     x.DefaultRequestHeaders.AcceptCharset.Add(new StringWithQualityHeaderValue("UTF-8"));
-            //     x.DefaultRequestHeaders.Add("apikey", publicApiKey);
+            //     x.DefaultRequestHeaders.Add("apikey", "22b04c92-ed29-42c6-bcbd-e15a5ce7c7bb");
             //     x.DefaultRequestHeaders.Add("timestamp", GetNetworkTime().ToString());
             // });
 

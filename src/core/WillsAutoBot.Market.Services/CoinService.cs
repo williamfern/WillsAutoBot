@@ -3,7 +3,7 @@ using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using WillsAutoBot.Cointree.Services.HttpClient;
+using WillsAutoBot.BTCMarket.Services.HttpClient;
 using WillsAutoBot.Data.Entities;
 using WillsAutoBot.Data.Repositories;
 using WillsAutoBot.Services.Models;
@@ -13,20 +13,21 @@ namespace WillsAutoBot.Crypto.Services
 {
     public class CoinService : ICoinService
     {
-        private readonly ICointreeHttpClient _cointreeHttpClient;
+        private readonly IBtcMarketHttpClient _btcMarketHttpClient;
         private readonly ICoinRepository _coinRepository;
         private readonly ICoinPriceRepository _coinPriceRepository;
 
         private readonly IMapper _mapper;
         private readonly ILogger<ICoinService> _logger;
 
-        public CoinService(ICointreeHttpClient cointreeHttpClient, 
+        public CoinService(
+            IBtcMarketHttpClient btcMarketHttpClient, 
             ICoinRepository coinRepository, 
             ICoinPriceRepository coinPriceRepository, 
             ILogger<ICoinService> logger,
             IMapper mapper)
         {
-            _cointreeHttpClient = cointreeHttpClient.ThrowIfNullOrDefault(nameof(cointreeHttpClient));
+            _btcMarketHttpClient = btcMarketHttpClient.ThrowIfNullOrDefault(nameof(btcMarketHttpClient));
             _coinRepository = coinRepository.ThrowIfNullOrDefault(nameof(coinRepository));
             _coinPriceRepository = coinPriceRepository.ThrowIfNullOrDefault(nameof(coinPriceRepository));
             _logger = logger.ThrowIfNullOrDefault(nameof(logger));
@@ -54,8 +55,24 @@ namespace WillsAutoBot.Crypto.Services
 
         public async Task<CoinPrice> GetCoinPriceList(string coinName)
         {
-            var coin = await _cointreeHttpClient.GetCoinPrice(coinName);
+            // var coin = await _cointreeHttpClient.GetCoinPrice(coinName);
 
+            var coin = new CoinPrice()
+            {
+                Ask = 1,
+                Bid = 2,
+                Buy = "12",
+                Market = "3",
+                Rate = 2,
+                Sell = "222",
+                Timestamp = DateTimeOffset.Now,
+                CoinId = "",
+                CoinName = "",
+                RateSteps = "",
+                RateType = "",
+                SpotRate = 1
+            };
+            
             return new CoinPrice()
             {
                 Ask = coin.Ask,

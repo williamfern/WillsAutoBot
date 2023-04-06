@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
-using WillsAutoBot.BTCMarket.Services.BTCMarketDayTrading.Models;
 using Order = WillsAutoBot.Services.Models.Order;
 
 namespace WillsAutoBot.Crypto.Services
